@@ -4,4 +4,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("hello_world!")
+    if request.method == "POST":
+        return HttpResponse("You must have POSTed something!")
+    elif request.method == "GET":
+        return HttpResponse("request.method")
